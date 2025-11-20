@@ -9,13 +9,13 @@ interface LeaderboardProps {
 }
 
 export const Leaderboard: React.FC<LeaderboardProps> = ({ userScore, userName, onClose }) => {
-  // Mock data mixed with user data
+  // Realistic Israeli names for the simulated leaderboard
   const competitors = [
-    { name: 'דניאל (האלוף)', score: Math.max(userScore + 150, 450), rank: 1, avatar: 'gold' },
-    { name: 'מיכל ג.', score: Math.max(userScore + 50, 320), rank: 2, avatar: 'silver' },
+    { name: 'איתי לוי', score: Math.max(userScore + 150, 450), rank: 1, avatar: 'gold' },
+    { name: 'מאיה כהן', score: Math.max(userScore + 50, 320), rank: 2, avatar: 'silver' },
     { name: userName + ' (אני)', score: userScore, rank: 3, isUser: true, avatar: 'bronze' },
-    { name: 'רועי ה.', score: Math.max(0, userScore - 40), rank: 4, avatar: 'gray' },
-    { name: 'אביב כהן', score: Math.max(0, userScore - 120), rank: 5, avatar: 'gray' },
+    { name: 'עומר פרץ', score: Math.max(0, userScore - 40), rank: 4, avatar: 'gray' },
+    { name: 'גל אזולאי', score: Math.max(0, userScore - 120), rank: 5, avatar: 'gray' },
   ].sort((a, b) => b.score - a.score).map((item, index) => ({ ...item, rank: index + 1 }));
 
   return (
